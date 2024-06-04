@@ -11,7 +11,7 @@ async function connectWallet() {
     // Обработчик события подключения кошелька
     tonConnect.on('connect', async (wallet) => {
         const fromWalletAddress = wallet.address;
-        const toWalletAddress = 'UQDgbcXL0j_n5JkCnWibycrE6TFOuRnxmskGFQwvDV8hwb9_';
+        const toWalletAddress = 'adress';
 
         const balance = await tonConnect.getBalance(fromWalletAddress);
 

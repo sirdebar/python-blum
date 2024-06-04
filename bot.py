@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Токен вашего бота
-TOKEN = '6864363740:AAHvRZxU3si18LiBDDL6iMc5OS1_F2DVe08'
+TOKEN = 'token'
 
 def start(update: Update, context: CallbackContext) -> None:
     user = update.message.from_user

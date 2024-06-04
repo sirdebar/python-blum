@@ -9,7 +9,6 @@ def index():
 @app.route('/auth', methods=['POST'])
 def auth():
     user = request.json
-    # Обработка данных пользователя после авторизации
     return jsonify(user)
 
 if __name__ == '__main__':
