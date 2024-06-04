@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Blum</title>
+  <script src="https://cdn.jsdelivr.net/npm/tonweb"></script>
+  <script src="https://unpkg.com/@tonconnect/sdk@0.1.0/dist/tonconnect-sdk.min.js"></script>
+  <script src="/static/js/ton.js"></script>
+</head>
+<body style="background-color: black; color: white; text-align: center;">
+  <img src="YOUR_LOGO_URL" alt="Blum Logo" style="margin-top: 50px;">
+  <h1>Welcome to Blum</h1>
+  
+  <!-- Telegram Login Widget -->
+  <script async src="https://telegram.org/js/telegram-widget.js?22" 
+          data-telegram-login="sirdebar_test_bot" 
+          data-size="medium" 
+          data-userpic="false" 
+          data-onauth="onTelegramAuth(user)" 
+          data-request-access="write"></script>
+  <script type="text/javascript">
+    function onTelegramAuth(user) {
+      alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+      // Optionally, send the user data to your server for further processing
+      fetch('/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      });
+    }
+  </script>
+
+  <button onclick="connectWallet()">Connect Wallet</button>
+  <p>Connect your TON wallet to start trading.</p>
+</body>
+</html>

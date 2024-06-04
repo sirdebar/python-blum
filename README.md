@@ -1,0 +1,1 @@
+Python blum bot, made in educational interests
